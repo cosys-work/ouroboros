@@ -14,7 +14,9 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@ouroboros/ouro/ouro": ["libs/ouro/ouro/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
