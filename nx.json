@@ -23,6 +23,8 @@
   "projects": {
     "ouro-ouro": { "tags": [] },
     "boros": { "tags": ["ouroboros uix"] },
-    "boros-e2e": { "tags": [], "implicitDependencies": ["boros"] }
+    "boros-e2e": { "tags": [], "implicitDependencies": ["boros"] },
+    "borosvelter": { "tags": [] },
+    "borosvelter-e2e": { "tags": [], "implicitDependencies": ["borosvelter"] }
   }
 }

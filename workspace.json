@@ -233,6 +233,108 @@
           }
         }
       }
+    },
+    "borosvelter": {
+      "root": "apps/borosvelter",
+      "sourceRoot": "apps/borosvelter/src",
+      "projectType": "application",
+      "targets": {
+        "build": {
+          "executor": "@nxext/svelte:build",
+          "outputs": [
+            "{options.outputPath}"
+          ],
+          "options": {
+            "outputPath": "dist/apps/borosvelter",
+            "entryFile": "apps/borosvelter/src/main.ts",
+            "tsConfig": "apps/borosvelter/tsconfig.app.json",
+            "svelteConfig": "apps/borosvelter/svelte.config.js",
+            "assets": [
+              {
+                "glob": "/*",
+                "input": "apps/borosvelter/public/**",
+                "output": "./"
+              }
+            ]
+          },
+          "configurations": {
+            "production": {
+              "dev": false
+            }
+          }
+        },
+        "serve": {
+          "executor": "@nxext/svelte:build",
+          "options": {
+            "outputPath": "dist/apps/borosvelter",
+            "entryFile": "apps/borosvelter/src/main.ts",
+            "tsConfig": "apps/borosvelter/tsconfig.app.json",
+            "svelteConfig": "apps/borosvelter/svelte.config.js",
+            "assets": [
+              {
+                "glob": "/*",
+                "input": "apps/borosvelter/public/**",
+                "output": "./"
+              }
+            ],
+            "watch": true,
+            "serve": true
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/borosvelter/**/*.{ts,svelte,spec.ts}"
+            ]
+          }
+        },
+        "check": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "svelte-check",
+            "cwd": "apps/borosvelter"
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/apps/borosvelter"
+          ],
+          "options": {
+            "jestConfig": "apps/borosvelter/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "borosvelter-e2e": {
+      "root": "apps/borosvelter-e2e",
+      "sourceRoot": "apps/borosvelter-e2e/src",
+      "projectType": "application",
+      "targets": {
+        "e2e": {
+          "executor": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/borosvelter-e2e/cypress.json",
+            "tsConfig": "apps/borosvelter-e2e/tsconfig.e2e.json",
+            "devServerTarget": "borosvelter:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "borosvelter:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/borosvelter-e2e/**/*.{js,ts}"
+            ]
+          }
+        }
+      }
     }
   },
   "cli": {
