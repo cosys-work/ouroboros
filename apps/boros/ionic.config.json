@@ -1,0 +1,7 @@
+{
+  "name": "boros",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

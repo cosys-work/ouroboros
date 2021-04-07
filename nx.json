@@ -20,5 +20,9 @@
       }
     }
   },
-  "projects": { "ouro-ouro": { "tags": [] } }
+  "projects": {
+    "ouro-ouro": { "tags": [] },
+    "boros": { "tags": ["ouroboros uix"] },
+    "boros-e2e": { "tags": [], "implicitDependencies": ["boros"] }
+  }
 }
